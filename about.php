@@ -1,15 +1,13 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Общежитие — Главная</title>
+    <title>О нас</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="index">
 
 <ul class="background-bubbles">
-    <!-- пузыри как прежде -->
     <li></li><li></li><li></li><li></li><li></li>
     <li></li><li></li><li></li><li></li><li></li>
 </ul>
@@ -35,18 +33,12 @@
 
 
 <div class="container">
-    <h1>Система учёта студентов общежития</h1>
-
-    <?php if (isset($_SESSION['username'])): ?>
-        <p class="welcome">Привет, <strong><?php echo $_SESSION['username']; ?></strong>!</p>
-        <a class="btn primary" href="students.php">Учёт студентов</a>
-    <?php else: ?>
-        <p class="welcome">Добро пожаловать! Войдите или зарегистрируйтесь:</p>
-        <div class="button-group">
-            <a class="btn success" href="register.php">Регистрация</a>
-            <a class="btn primary" href="login.php">Вход</a>
-        </div>
-    <?php endif; ?>
+    <h1>О нашей системе</h1>
+    <div class="card">
+        <p>Этот сайт предназначен для ведения учёта студентов, проживающих в общежитии.</p>
+        <p>Вы можете регистрироваться, авторизовываться, управлять данными о студентах, а также пользоваться современным интерфейсом с поддержкой адаптивной вёрстки.</p>
+        <p>Внутри реализованы: регистрация, авторизация, учёт студентов, работа с базой данных, AJAX, сессии и cookies.</p>
+    </div>
 </div>
 
 </body>

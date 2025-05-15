@@ -15,6 +15,24 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="dashboard">
+<nav class="navigation">
+    <div class="nav-container">
+        <a href="index.php" class="nav-logo">Общежитие</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-burger">&#9776;</label>
+        <div class="nav-links">
+            <a href="index.php">Главная</a>
+            <a href="about.php">О нас</a>
+            <a href="profile.php">Профиль</a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <a href="logout.php" class="danger">Выход</a>
+            <?php else: ?>
+                <a href="login.php">Вход</a>
+                <a href="register.php">Регистрация</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</nav>
 
 <div class="container">
     <div class="nav-container">

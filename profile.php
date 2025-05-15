@@ -1,15 +1,21 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Общежитие — Главная</title>
+    <title>Профиль</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="index">
 
 <ul class="background-bubbles">
-    <!-- пузыри как прежде -->
     <li></li><li></li><li></li><li></li><li></li>
     <li></li><li></li><li></li><li></li><li></li>
 </ul>
@@ -35,18 +41,11 @@
 
 
 <div class="container">
-    <h1>Система учёта студентов общежития</h1>
-
-    <?php if (isset($_SESSION['username'])): ?>
-        <p class="welcome">Привет, <strong><?php echo $_SESSION['username']; ?></strong>!</p>
-        <a class="btn primary" href="students.php">Учёт студентов</a>
-    <?php else: ?>
-        <p class="welcome">Добро пожаловать! Войдите или зарегистрируйтесь:</p>
-        <div class="button-group">
-            <a class="btn success" href="register.php">Регистрация</a>
-            <a class="btn primary" href="login.php">Вход</a>
-        </div>
-    <?php endif; ?>
+    <h1>Личный кабинет</h1>
+    <div class="card">
+        <p>Имя пользователя: <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <p><a class="btn primary" href="students.php">Управлять студентами</a></p>
+    </div>
 </div>
 
 </body>
